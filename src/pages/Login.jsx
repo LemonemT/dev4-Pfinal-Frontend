@@ -11,12 +11,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/auth/login', { email, password });
+      const response = await api.post('/auth/login', { email, password }); 
       const { token, role } = response.data;
       localStorage.setItem('token', token);
       localStorage.setItem('role', role);
 
-      if (role === 'admin') {
+      if (role === 'administrador') { 
         navigate('/admin');
       } else {
         navigate('/incidents');
